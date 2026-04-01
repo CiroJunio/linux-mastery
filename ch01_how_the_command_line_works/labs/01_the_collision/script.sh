@@ -11,4 +11,8 @@ cat << EOF > "$FAKE_DIR/ls"
 echo "^SISTEMA SEQUESTRADO^"
 EOF
 
-    
+#3. Grant execution permisison
+chmod +x "$FAKE_DIR/ls"
+
+echo "The fake 'ls' is ready at $FAKE_DIR/ls"
+echo "Now, to spring the trap, run: export PATH=\"$FAKE_DIR:\$PATH\""    
