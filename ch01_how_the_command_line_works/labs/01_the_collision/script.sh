@@ -6,13 +6,13 @@ FAKE_DIR="/tmp/fake_bin"
 mkdir -p "$FAKE_DIR"
 
 #2. Create the "ls directory"
-cat << EOF > "$FAKE_DIR/ls"
-#!bin/bash
+cat << EOF > /tmp/fake_bin/ls
+#!/bin/bash
 echo "^SISTEMA SEQUESTRADO^"
 EOF
 
 #3. Grant execution permisison
-chmod +x "$FAKE_DIR/ls"
+chmod +x /tmp/fake_bin/ls
 
 echo "The fake 'ls' is ready at $FAKE_DIR/ls"
 echo "Now, to spring the trap, run: export PATH=\"$FAKE_DIR:\$PATH\""    
