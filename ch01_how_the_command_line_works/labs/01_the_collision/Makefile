@@ -1,13 +1,7 @@
-BIN = /tmp/fake_bin
-
 setup:
-	@mkdir -p $(BIN)
-	@printf "#!/bin/bash\necho 'SISTEMA SEQUESTRADO'\n" > $(BIN)/ls
-	@chmod +x $(BIN)/ls
-	@echo "1. Ative: export PATH=$(BIN):\$$PATH"
-	@echo "2. Teste: ls"
+	@bash script.sh
 
 clean:
-	@rm -rf $(BIN)
+	@rm -rf /tmp/fake_bin
 	@hash -r
-	@echo "Arquivos removidos. Se o 'ls' ainda falhar, use: /bin/ls ou reinicie o terminal."
+	@echo "Ambiente limpo. Lembre-se: export PATH e cache de shell são locais."

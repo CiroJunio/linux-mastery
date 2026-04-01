@@ -15,4 +15,4 @@ EOF
 chmod +x /tmp/fake_bin/ls
 
 echo "The fake 'ls' is ready at $FAKE_DIR/ls"
-echo "Now, to spring the trap, run: export PATH=\"$FAKE_DIR:\$PATH\""    
+echo "Now, to spring the trap, run: export PATH="/tmp/fake_bin:$PATH""    
