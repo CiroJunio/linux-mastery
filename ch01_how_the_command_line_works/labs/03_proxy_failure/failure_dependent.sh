@@ -15,3 +15,12 @@ TARGET_DIR="$BASE_DIR/ghost_folder"
 
 echo "Tentando acessar o contexto: $TARGET_DIR"
 
+# 4. Failure simulation
+if cd "$TARGET_DIR" 2>/dev/null; then
+    echo "Sucesso: No diretório correto. Limpando..."
+    rm -rf * else
+    echo "ERRO CRÍTICO: 'cd' falhou! [cite: 149]"
+    echo "Se não houvesse essa verificação, onde o 'rm -rf *' rodaria?"
+    echo "Resposta: Ele rodaria em $(pwd), deletando seus arquivos reais."
+    exit 1
+fi
